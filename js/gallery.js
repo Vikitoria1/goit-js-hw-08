@@ -87,28 +87,28 @@ const images = [
     }
 
     galleryContainer.innerHTML = image;
+    let modalWindow;
+
 
     galleryContainer.addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log(event);
-    })
-
-    galleryContainer.addEventListener('click', (event) => {
-
         if (event.target.classList.contains('gallery-image')) {
             event.preventDefault();
-  
+    
             const dataSource = event.target.getAttribute('data-source');
             const description = event.target.getAttribute('alt');
-            modalWindow = basicLightbox.create(`<div class="modalWindow">
-                                        <img
-                                          src="${dataSource}"
-                                          alt="${description}"
-                                          width="1112"
-                                          height="640"
-                                        >
-                                    </div>`);
-
+            modalWindow = basicLightbox.create(`
+                <div class="modalWindow">
+                    <img
+                        src="${dataSource}"
+                        alt="${description}"
+                        width="1112"
+                        height="640"
+                        onclick="modalWindow.close()"
+                    >
+                </div>`
+            );
+    
             modalWindow.show();
         };
-    })
+    });
+    

@@ -1,23 +1,31 @@
+img {
+  display: block;
+}
+
+a:hover {
+  cursor: url(../images/vector.png), pointer;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   list-style: none;
   gap: 24px;
-  
+  justify-content: center;
+  align-items: center;
 }
 
 .gallery-item {
-
+ text-align: center;
 }
 
 .gallery-link {
-  
+  display: inline-block;
 }
 
 .gallery-image {
   width: 360px;
   height: 200px;
   object-fit: cover;
-  
 }
